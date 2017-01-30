@@ -1,12 +1,25 @@
-var pageEls = document.querySelectorAll('*');
-var colorArr = [];
+//First go...
 
-for (var i = 0; i < pageEls.length; i++) {
-	var getColor = window.getComputedStyle(pageEls[i], null)
-												.getPropertyValue('background-color');
-	colorArr.push(getColor);
+var pageEls = Array.from(document.querySelectorAll('*'));
+
+// var newArr = colorArr.filter(function(el) {
+// 	return el !== "rgba(0, 0, 0, 0)";
+// });
+
+function getColor(e) {
+    var color = window.getComputedStyle(e, null)
+							          .getPropertyValue('background-color');
+    return color;
 }
 
-var newArr = colorArr.filter(function(el) {
-	return el !== "rgba(0, 0, 0, 0)";
-});
+function filterWhite(e) {
+	if (e !== 'rgba(0, 0, 0, 0)' || 'rgb(0, 0, 0, 0)') {
+		return e;
+	}
+}
+
+function killDupes() {}
+
+var colorArr = pageEls.map(getColor).filter(filterWhite);
+
+console.log(colorArr);
