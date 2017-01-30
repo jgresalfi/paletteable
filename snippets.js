@@ -1,19 +1,15 @@
-//First go...
+//Getting colors off page and building array of rgba values
 
 var pageEls = Array.from(document.querySelectorAll('*'));
 
-// var newArr = colorArr.filter(function(el) {
-// 	return el !== "rgba(0, 0, 0, 0)";
-// });
-
 function getColor(e) {
-    var color = window.getComputedStyle(e, null)
+    let color = window.getComputedStyle(e, null)
 							          .getPropertyValue('background-color');
     return color;
 }
 
 function filterWhite(e) {
-	if (e !== 'rgba(0, 0, 0, 0)' || 'rgb(0, 0, 0, 0)') {
+	if (e !== 'rgba(0, 0, 0, 0)' && 'rgb(0, 0, 0, 0)') {
 		return e;
 	}
 }
