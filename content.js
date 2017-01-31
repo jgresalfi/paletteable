@@ -24,7 +24,7 @@ chrome.runtime.onMessage.addListener(
                             finalArr.push(arr[i]);
                         }
                     }
-                    // return finalArr;
+                    return finalArr;
                     console.log(finalArr);
                 }
 
