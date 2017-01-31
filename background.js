@@ -14,7 +14,7 @@ chrome.browserAction.onClicked.addListener(function(tab) {
   });
   chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
-      if (request.message === "open_new_tab") {
+      if (request.message === "got_the_colors") {
         chrome.tabs.create({
           "url": request.url
         });
