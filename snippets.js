@@ -1,6 +1,6 @@
+(function() {
 //Getting colors off page and building array of rgba values
-
-var pageEls = Array.from(document.querySelectorAll('*'));
+const pageEls = Array.from(document.querySelectorAll('*'));
 
 function getColor(e) {
     let color = window.getComputedStyle(e, null)
@@ -21,12 +21,15 @@ function killDupes(arr) {
             finalArr.push(arr[i]);
         }
     }
-    return finalArr;
+    // return finalArr;
+    console.log(finalArr);
 }
 
-var colorArr = pageEls.map(getColor)
+const colorArr = pageEls.map(getColor)
     .filter(filterWhite)
     .sort();
 
 killDupes(colorArr);
+
+}());
 
