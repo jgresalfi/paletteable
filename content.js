@@ -1,7 +1,7 @@
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
         if (request.message === "clicked_browser_action") {
-            (function() {
+            var pageColors = (function() {
                 //Getting colors off page and building array of rgba values
                 const pageEls = Array.from(document.querySelectorAll('*'));
 
@@ -25,20 +25,18 @@ chrome.runtime.onMessage.addListener(
                         }
                     }
                     return finalArr;
-                    console.log(finalArr);
                 }
 
                 const colorArr = pageEls.map(getColor)
                     .filter(filterWhite)
                     .sort();
 
-                killDupes(colorArr);
+                return killDupes(colorArr);
 
             }());
-
             chrome.runtime.sendMessage({
-                "message": "open_new_tab",
-                //More stuff here...
+                "message": "got_the_colors",
+                "colors": pageColors
             });
         }
     });
