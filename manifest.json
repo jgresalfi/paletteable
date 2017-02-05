@@ -4,11 +4,6 @@
   "description": "This extension grabs color palettes from active webpages.",
   "version": "0.1",
 
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-
   "content_scripts": [
     {
       "matches": [

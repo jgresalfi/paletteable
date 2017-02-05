@@ -44,6 +44,5 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             "message": "got_the_colors",
             colors: colors
         });
-        return true;
     }
 });
