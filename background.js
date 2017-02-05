@@ -1,21 +1,23 @@
 // background.js
 
-// Called when the user clicks on the browser action.
-chrome.browserAction.onClicked.addListener(function(tab) {
-    // Send a message to the active tab
-    chrome.tabs.query({
-            active: true,
-            currentWindow: true
-        },
-        function(tabs) {
-            var activeTab = tabs[0];
-            chrome.tabs.sendMessage(activeTab.id, { "message": "clicked_browser_action" })
-        });
+// chrome.runtime.onConnect.addListener(function(response, sender, sendResponse) {
 
-});
-chrome.runtime.onMessage.addListener(
-    function(request, sender, sendResponse) {
-        if (request.message === "got_the_colors") {
-            console.log(request.colors);
-        }
-    });
+// });
+
+// function sendColors(colors) {
+//     chrome.runtime.sendMessage({
+//         "message": "sending_colors",
+//         "colors": colors
+//     });
+// }
+
+// chrome.runtime.onMessage.addListener(
+//     function(request, sender, sendResponse) {
+//         var finalColors;
+//         if (request.message === "got_the_colors") {
+//             finalColors = request.colors;
+//             sendColors(finalColors);
+//         } else if (request.message === "get_colors") {
+          
+//         }
+//     });
