@@ -1,13 +1,19 @@
 "use strict";
 
-function init() {
+function getColors() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { "message": "get_colors" }, function(response) {
-            console.log(response);
+            var palette = document.getElementById("cont");
+            var colors = response.colors;
+            colors.forEach(function(e) {
+                var swatch = document.createElement("div");
+                swatch.innerHTML = "<div>" + e + "</div>";
+                palette.append(swatch);
+            })
         });
     });
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    init(); 
+    getColors();
 });
