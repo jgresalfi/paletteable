@@ -17,6 +17,7 @@ function getColors() {
                     targetSelector: ".swatch"
                 });
                 console.log(e);
+                html5tooltips.refresh();
                 palette.append(swatch);
             })
         });
@@ -24,5 +25,5 @@ function getColors() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    getColors();
+  getColors();
 });
