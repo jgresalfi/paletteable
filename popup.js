@@ -9,6 +9,14 @@ function getColors() {
                 var swatch = document.createElement("div");
                 swatch.classList.add("swatch");
                 swatch.style.backgroundColor = e;
+                html5tooltips({
+                    animateFunction: "foldin",
+                    color: "charcoal",
+                    contentText: e,
+                    stickTo: "left",
+                    targetSelector: ".swatch"
+                });
+                console.log(e);
                 palette.append(swatch);
             })
         });
