@@ -37,9 +37,7 @@ function pageColors() {
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     var colors;
     if (request.message === "get_colors") {
-      console.log(request);
         colors = pageColors();
-        console.log(colors);
         sendResponse({
             "message": "got_the_colors",
             colors: colors

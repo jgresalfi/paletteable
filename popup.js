@@ -7,7 +7,8 @@ function getColors() {
             var colors = response.colors;
             colors.forEach(function(e) {
                 var swatch = document.createElement("div");
-                swatch.innerHTML = "<div>" + e + "</div>";
+                swatch.classList.add("swatch");
+                swatch.style.backgroundColor = e;
                 palette.append(swatch);
             })
         });
