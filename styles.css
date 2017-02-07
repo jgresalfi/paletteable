@@ -4,27 +4,43 @@
     width: auto;
     font-family: "Varela Round", sans-serif;
     font-size: 16px;
+    color: rgb(27%, 27%, 27%);
 }
 
 .palette-header {
     min-width: 100%;
+}
+
+.palette-h2 {
+    max-height: 45px;
+    max-width: 75%;
     text-align: center;
     font-size: 1.55em;
-    margin-bottom: 0;
+    margin: 15px auto 25px auto;
+    padding-bottom: 15px;
+    border-bottom: 1px rgb(27%, 27%, 27%) solid;
 }
 
 #cont {
     min-height: 450px;
-    width: 300px;
+    width: 550px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    padding-left: 5px;
+    padding-right: 5px;
 }
 
 .swatch {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
+    width: 75px;
+    height: 75px;
+    border-radius: 5%;
     margin: 0 5px 0 5px;
     border: 1px grey solid;
+}
+
+.swatch-val {
+    text-align: center;
+    font-size: .75em;
+    display: block;
 }

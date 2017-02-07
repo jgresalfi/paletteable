@@ -7,17 +7,9 @@ function getColors() {
             var colors = response.colors;
             colors.forEach(function(e) {
                 var swatch = document.createElement("div");
-                swatch.classList.add("swatch");
+                swatch.classList.add("swatch", "hint--top", "hint--rounded", "hint--small");
+                swatch.setAttribute("aria-label", e);
                 swatch.style.backgroundColor = e;
-                html5tooltips({
-                    animateFunction: "foldin",
-                    color: "charcoal",
-                    contentText: e,
-                    stickTo: "left",
-                    targetSelector: ".swatch"
-                });
-                console.log(e);
-                html5tooltips.refresh();
                 palette.append(swatch);
             })
         });
@@ -25,5 +17,5 @@ function getColors() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-  getColors();
+    getColors();
 });
