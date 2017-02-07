@@ -2,12 +2,15 @@
     overflow: visible;
     margin: 0;
     width: auto;
+    font-family: "Varela Round", sans-serif;
+    font-size: 16px;
 }
 
 .palette-header {
     min-width: 100%;
     text-align: center;
-    font-family: Helvetica;
+    font-size: 1.55em;
+    margin-bottom: 0;
 }
 
 #cont {
@@ -22,6 +25,6 @@
     width: 50px;
     height: 50px;
     border-radius: 50px;
-    margin: 10px;
+    margin: 0 5px 0 5px;
     border: 1px grey solid;
 }
