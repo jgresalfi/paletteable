@@ -23,7 +23,6 @@ function killDupes(arr) {
 }
 
 function colorBlob(c) {
-    //
     var blob = new Blob(c, { "type": "text" });
     return blob;
 }
@@ -53,8 +52,15 @@ function pageColors() {
     return killDupes(colorArr);
 };
 
+function formatColors(colors) {
+  var arr = colors.map(function(e) {
+    return "{ color: " + e + " }" + "\n";
+  });
+  return arr;
+}
+
 function grabFile(file) {
-    download(file, "test.txt", "text/plain");
+    download(file, "test.css", "text/plain");
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -66,7 +72,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         });
     } else if (request.message === "download-palette") {
         var colors = pageColors();
-        var blob = colorBlob(colors);
+        var formattedColors = formatColors(colors);
+        var blob = colorBlob(formattedColors);
         var file = blobToFile(blob, "my-color-palette.txt");
         grabFile(file);
         sendResponse({
