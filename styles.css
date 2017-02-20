@@ -21,6 +21,12 @@
     border-bottom: 1px rgb(27%, 27%, 27%) solid;
 }
 
+#download {
+    position: absolute;
+    top: 11px;
+    right: 12px;
+}
+
 #cont {
     min-height: 450px;
     width: 450px;
@@ -36,11 +42,19 @@
     height: 75px;
     border-radius: 5%;
     margin: 5px;
-    border: 1px rgb(211,211,211) solid;
+    border: 1px rgb(211, 211, 211) solid;
 }
 
 .swatch-val {
     text-align: center;
     font-size: .75em;
     display: block;
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+    border: none;
+    outline: none;
 }

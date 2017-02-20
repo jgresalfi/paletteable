@@ -60,7 +60,7 @@ function formatColors(colors) {
 }
 
 function grabFile(file) {
-    download(file, "test.css", "text/plain");
+    download(file, "color-palette.css", "text/plain");
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
@@ -74,7 +74,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         var colors = pageColors();
         var formattedColors = formatColors(colors);
         var blob = colorBlob(formattedColors);
-        var file = blobToFile(blob, "my-color-palette.txt");
+        var file = blobToFile(blob, "color-palette.css");
         grabFile(file);
         sendResponse({
             "message": "file-downloaded"
