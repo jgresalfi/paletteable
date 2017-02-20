@@ -23,14 +23,14 @@ function killDupes(arr) {
 }
 
 function colorBlob(c) {
-  //
+    //
     var blob = new Blob(c, { "type": "text" });
     return blob;
 }
 
 function colorExport(blob) {
-  //New filereader has an onload listener that will fire its callback when readAsText method is complete
-  //readAsText fires a 'load' event to tell the FileReader object to fire its callback
+    //New filereader has an onload listener that will fire its callback when readAsText method is complete
+    //readAsText fires a 'load' event to tell the FileReader object to fire its callback
     var reader = new FileReader();
     reader.onload = function(e) {
         return e.target.result;
@@ -39,9 +39,9 @@ function colorExport(blob) {
 }
 
 function blobToFile(blob, fileName) {
-  blob.lastModifiedDate = new Date();
-  blob.name = fileName;
-  return blob;
+    blob.lastModifiedDate = new Date();
+    blob.name = fileName;
+    return blob;
 }
 
 function pageColors() {
@@ -54,18 +54,23 @@ function pageColors() {
 };
 
 function grabFile(file) {
-  download(file, file.name, "text/plain");
+    download(file, "test.txt", "text/plain");
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === "get_colors") {
         var colors = pageColors();
+        sendResponse({
+            "message": "got_the_colors",
+            colors: colors
+        });
+    } else if (request.message === "download-palette") {
+        var colors = pageColors();
         var blob = colorBlob(colors);
         var file = blobToFile(blob, "my-color-palette.txt");
         grabFile(file);
         sendResponse({
-            "message": "got_the_colors",
-            colors: colors
+            "message": "file-downloaded"
         });
     }
 });
