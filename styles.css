@@ -18,13 +18,13 @@
     font-size: 1.55em;
     margin: 15px auto 25px auto;
     padding-bottom: 15px;
-    border-bottom: 1px rgb(27%, 27%, 27%) solid;
+    /*border-bottom: 1px rgb(27%, 27%, 27%) solid;*/
 }
 
 #download {
     position: absolute;
-    top: 11px;
-    right: 12px;
+    top: 12px;
+    right: 21px;
 }
 
 #cont {
