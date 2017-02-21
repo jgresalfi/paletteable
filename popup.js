@@ -1,3 +1,5 @@
+// JS for Palettable Chrome Extension - by Jason Gresalfi - released under MIT License - 2017
+
 "use strict";
 
 function getColors() {

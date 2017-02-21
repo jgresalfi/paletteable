@@ -1,3 +1,5 @@
+/* Styles for Palettable Chrome Extension - by Jason Gresalfi - released under MIT License - 2017 */
+
 #popup-body {
     overflow: visible;
     margin: 0;
@@ -16,9 +18,8 @@
     max-width: 75%;
     text-align: center;
     font-size: 1.55em;
-    margin: 15px auto 25px auto;
+    margin: 20px auto 10px auto;
     padding-bottom: 15px;
-    /*border-bottom: 1px rgb(27%, 27%, 27%) solid;*/
 }
 
 #download {

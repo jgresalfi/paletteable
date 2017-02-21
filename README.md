@@ -4,6 +4,6 @@ A chrome extension to grab color palettes from current browser window and a butt
 Built with:
 
 - Blob API
-- FileReader API
+- FileReader interface
 - download.js
 - popup.js

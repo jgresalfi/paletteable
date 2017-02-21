@@ -1,3 +1,5 @@
+// JS for Palettable Chrome Extension - by Jason Gresalfi - released under MIT License - 2017
+
 "use strict";
 
 function getColor(e) {
@@ -28,8 +30,6 @@ function colorBlob(c) {
 }
 
 function colorExport(blob) {
-    //New filereader has an onload listener that will fire its callback when readAsText method is complete
-    //readAsText fires a 'load' event to tell the FileReader object to fire its callback
     var reader = new FileReader();
     reader.onload = function(e) {
         return e.target.result;
@@ -44,7 +44,6 @@ function blobToFile(blob, fileName) {
 }
 
 function pageColors() {
-    //Getting colors off page and building array of rgba values
     var pageEls = Array.from(document.querySelectorAll('*'));
     var colorArr = pageEls.map(getColor)
         .filter(filterWhite)
