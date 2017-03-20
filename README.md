@@ -8,4 +8,4 @@ Built with:
 - download.js
 - popup.js
 
-![alt tag](https://raw.githubusercontent.com/jgresalfi/paletteable/master/paletteable.png)
+![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
