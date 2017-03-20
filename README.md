@@ -12,7 +12,7 @@ Built with:
 ![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
 
 
-# Simple to use...
+Simple to use...
 
 
-![alt tag](![alt tag](https://github.com/jgresalfi/paletteable/blob/master/paletteable-howto.png)
+![alt tag](https://github.com/jgresalfi/paletteable/blob/master/paletteable-howto.png)
