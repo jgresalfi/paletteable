@@ -1,4 +1,5 @@
-# paletteable
+## paletteable
+
 A chrome extension to grab color palettes from current browser window and a button provided to download the palette with CSS formatting.
 
 Built with:
@@ -10,6 +11,8 @@ Built with:
 
 ![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
 
-## Simple to use!
 
-![alt tag](![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
+# Simple to use...
+
+
+![alt tag](![alt tag](https://github.com/jgresalfi/paletteable/blob/master/paletteable-howto.png)
