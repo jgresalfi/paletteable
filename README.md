@@ -9,3 +9,7 @@ Built with:
 - popup.js
 
 ![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
+
+## Simple to use!
+
+![alt tag](![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
