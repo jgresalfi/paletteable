@@ -9,9 +9,6 @@ Built with:
 - download.js
 - popup.js
 
-![alt tag](https://github.com/jgresalfi/paletteable/blob/master/palletteable.png)
-
-
 Simple to use...
 
 
