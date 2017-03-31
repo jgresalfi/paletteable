@@ -2,7 +2,7 @@
 
 "use strict";
 
-//Workaround for restriction on accessing external styles by using Window.getComputedStyle method
+//Workaround for restriction on accessing external styles by using Window.getComputedStyle method - Web API's CSSStyleSheet.cssRules interface restricted by CORS
 function getColor(e) {
     var color = window.getComputedStyle(e, null)
         .getPropertyValue('background-color');
@@ -27,26 +27,20 @@ function killDupes(arr) {
     return finalArr;
 }
 
+//Create a blob from the array of colors - you can access the list of blobs via chrome://blob-internals
 function colorBlob(c) {
     var blob = new Blob(c, { "type": "text" });
     return blob;
 }
 
-function colorExport(blob) {
-    var reader = new FileReader();
-    reader.onload = function(e) {
-        return e.target.result;
-    };
-    reader.readAsText(blob);
-}
-
+//This takes the blob data and adds timestamp and file name properties essentially turning it into a "file"
 function blobToFile(blob, fileName) {
     blob.lastModifiedDate = new Date();
     blob.name = fileName;
     return blob;
 }
 
-//Grabs all elements from a page (a little sledgehammery) - Web API's CSSStyleSheet.cssRules interface restricted by CORS
+//Grabs all elements from a page (a little sledgehammery)
 function pageColors() {
     var pageEls = Array.from(document.querySelectorAll('*'));
     var colorArr = pageEls.map(getColor)
@@ -55,6 +49,7 @@ function pageColors() {
     return killDupes(colorArr);
 };
 
+//Takes each color value and makes it into a nice CSS-like list
 function formatColors(colors) {
   var arr = colors.map(function(e) {
     return "{ color: " + e + " }" + "\n";
@@ -72,15 +67,15 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === "get_colors") {
         var colors = pageColors();
         sendResponse({
-            "message": "got_the_colors",
+            "message": "got_the_colors", //Arbitrary JSON can be returned - here a message is sent with color values
             colors: colors
         });
     } else if (request.message === "download-palette") {
         var colors = pageColors();
-        var formattedColors = formatColors(colors);
-        var blob = colorBlob(formattedColors);
-        var file = blobToFile(blob, "color-palette.css");
-        grabFile(file);
+        var formattedColors = formatColors(colors); //Formats color values to make more readable
+        var blob = colorBlob(formattedColors); //Stores formatted color list in a blob
+        var file = blobToFile(blob, "color-palette.css"); //Adds file properties to blob data
+        grabFile(file); //Use download.js libraries to save blob file to location
         sendResponse({
             "message": "file-downloaded"
         });
