@@ -8,7 +8,7 @@ function getColor(e) {
     return color;
 }
 
-function filterWhite(e) {
+function filterBlack(e) {
     if (e !== 'rgba(0, 0, 0, 0)' && 'rgb(0, 0, 0)') {
         return e;
     }
@@ -46,7 +46,7 @@ function blobToFile(blob, fileName) {
 function pageColors() {
     var pageEls = Array.from(document.querySelectorAll('*'));
     var colorArr = pageEls.map(getColor)
-        .filter(filterWhite)
+        .filter(filterBlack)
         .sort();
     return killDupes(colorArr);
 };
