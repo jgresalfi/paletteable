@@ -2,6 +2,7 @@
 
 "use strict";
 
+//Queries active browser tab and sends a message to content.js listener to extract colors from page
 function getColors() {
     chrome.tabs.query({ active: true, currentWindow: true }, function(tabs) {
         chrome.tabs.sendMessage(tabs[0].id, { "message": "get_colors" }, function(response) {
@@ -29,6 +30,7 @@ function fileDownload() {
     };
 }
 
+//Clicking Browser Action button fires getColors() and fileDownload()
 document.addEventListener("DOMContentLoaded", function() {
     getColors();
     fileDownload();

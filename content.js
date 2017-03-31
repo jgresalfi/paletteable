@@ -2,18 +2,21 @@
 
 "use strict";
 
+//Workaround for restriction on accessing external styles by using Window.getComputedStyle method
 function getColor(e) {
     var color = window.getComputedStyle(e, null)
         .getPropertyValue('background-color');
     return color;
 }
 
+//This filters out default background colors of elements - browser sets default to rgba black with full transparency
 function filterBlack(e) {
     if (e !== 'rgba(0, 0, 0, 0)' && 'rgb(0, 0, 0)') {
         return e;
     }
 }
 
+//After pageColors() sorts the color list - killDupes() removes any duplicate background colors when multiple elements are assigned the same color
 function killDupes(arr) {
     var finalArr = [];
     for (var i = 0; i < arr.length; i++) {
@@ -43,6 +46,7 @@ function blobToFile(blob, fileName) {
     return blob;
 }
 
+//Grabs all elements from a page (a little sledgehammery) - Web API's CSSStyleSheet.cssRules interface restricted by CORS
 function pageColors() {
     var pageEls = Array.from(document.querySelectorAll('*'));
     var colorArr = pageEls.map(getColor)
@@ -62,6 +66,8 @@ function grabFile(file) {
     download(file, "color-palette.css", "text/plain");
 }
 
+
+//Listener set for the message coming from popup.js - function arg 'sender' is ID of extension generated when packaged
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if (request.message === "get_colors") {
         var colors = pageColors();
