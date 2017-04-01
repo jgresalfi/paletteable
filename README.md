@@ -17,7 +17,6 @@ Simple to use...
 - Javascript APIs - https://developer.chrome.com/extensions/api_index
 - Manifest format - https://developer.chrome.com/extensions/manifest
 - Extension distribution guide - https://developer.chrome.com/webstore
-- My extension repo - https://github.com/jgresalfi/paletteable/blob/master/README.md
 - Web Store link - https://goo.gl/0aySNR
 - Blob object - https://developer.mozilla.org/en-US/docs/Web/API/Blob
 - CSSStyleSheet interface - https://developer.mozilla.org/en-US/docs/Web/API/CSSStylesheet
