@@ -19,6 +19,7 @@ function getColors() {
     });
 }
 
+//Sets a listener to register click on download button and fire download message
 function fileDownload() {
     var download = document.getElementById("download");
     download.onclick = function() {
