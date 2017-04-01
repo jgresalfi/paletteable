@@ -21,3 +21,5 @@ Simple to use...
 - Blob object - https://developer.mozilla.org/en-US/docs/Web/API/Blob
 - CSSStyleSheet interface - https://developer.mozilla.org/en-US/docs/Web/API/CSSStylesheet
 - download.js / client-side file downloading with JS/HTML5 - http://danml.com/download.html
+
+Copyright (c) 2017 Jason Gresalfi under MIT License
