@@ -57,6 +57,7 @@ function formatColors(colors) {
   return arr;
 }
 
+//Use download.js lib to handle pulling blob file down to local
 function grabFile(file) {
     download(file, "color-palette.css", "text/plain");
 }
